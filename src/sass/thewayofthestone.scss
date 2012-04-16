@@ -1,0 +1,96 @@
+@import "compass";
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "museo-slab";
+  font-weight: 300;
+
+  min-width: 960px;
+  overflow: hidden;
+  nav {
+    width: 960px;
+    margin: auto;
+
+    ul {
+      @include horizontal-list;
+
+      li {
+        font-size: 14px;
+        margin-left: 5px;
+
+        &:first-child {
+          margin-left:  0;
+        }
+
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: 700;
+          text-shadow: 1px 1px #000;
+
+          &:hover {
+            color: #ffa500;
+          }
+        }
+      }
+    }
+  }
+
+  &.content {
+    background: #000 url(/thewayofthestone/images/background.jpg) fixed no-repeat top center;
+
+    header {
+      background: rgba(170, 170, 170, 0.5);
+      padding-top: 5px;
+      height: 25px;
+      margin: 0 auto;
+    }
+  }
+
+  &.intro {
+    background: #000;
+
+    #logo {
+      position: relative;
+      overflow: hidden;
+      margin: auto;
+      margin-top: 50px;
+
+      width: 400px;
+      height: 520px;
+
+      #logo_hole {
+        position: absolute;
+        background: transparent url(/thewayofthestone/images/logo_hole.gif) 0 0 no-repeat;
+        z-index: 10;
+        width: 400px;
+        height: 520px;
+      }
+
+      #logo_left {
+        position: absolute;
+        background: transparent url(/thewayofthestone/images/logo_left.gif) 0 0 no-repeat;
+        width: 400px;
+        height: 520px;
+      }
+
+      #logo_right {
+        position: absolute;
+        background: transparent url(/thewayofthestone/images/logo_right.gif) 0 0 no-repeat;
+        width: 400px;
+        height: 520px;
+      }
+    }
+
+    nav {
+      padding-top: 25px;
+    }
+  }
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "chaparral-pro";
+}
