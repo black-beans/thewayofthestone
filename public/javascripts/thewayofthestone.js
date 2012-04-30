@@ -2,27 +2,19 @@
 
   $(function() {
     if ($('body.intro').length === 1) {
-      return $('nav li a').click(function(event) {
-        var link;
-        link = $(this);
-        $('nav').fadeOut();
-        $('#logo_left').animate({
-          left: -150,
-          queue: false
-        }, 400);
-        $('#logo_right').animate({
-          left: 150,
-          queue: false
-        }, 400, function() {
-          return $('#logo').animate({
-            zoom: 4,
-            opacity: 0,
-            top: -50
-          }, 800, function() {
-            return location.href = link.attr('href');
-          });
+      return $('a').click(function() {
+        $('#background').animate({
+          opacity: 1
+        }, 800);
+        return $('#logo').animate({
+          opacity: 0.1
+        }, 800, function() {
+          var go;
+          go = function() {
+            return location.href = 'page.html';
+          };
+          return setTimeout(go, 500);
         });
-        return event.preventDefault();
       });
     }
   });

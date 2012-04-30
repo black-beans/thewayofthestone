@@ -38,6 +38,18 @@ body {
     }
   }
 
+  #logo {
+    position: absolute;
+    background: transparent url(/thewayofthestone/images/logo.gif);
+    margin: auto;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 400px;
+    height: 520px;
+  }
+
   &.content {
     background: #000 url(/thewayofthestone/images/background.jpg) fixed no-repeat top center;
     background-size: cover;
@@ -50,16 +62,6 @@ body {
     }
 
     #logo {
-      position: absolute;
-      background: transparent url(/thewayofthestone/images/logo.gif);
-      background-repeat: repeat;
-      margin: auto;
-      top: 0px;
-      left: 0px;
-      bottom: 0px;
-      right: 0px;
-      width: 400px;
-      height: 520px;
       opacity: 0.1;
     }
   }
@@ -67,40 +69,19 @@ body {
   &.intro {
     background: #000;
 
-    #logo {
-      position: relative;
-      overflow: hidden;
-      margin: auto;
-      margin-top: 50px;
-
-      width: 400px;
-      height: 520px;
-
-      #logo_hole {
-        position: absolute;
-        background: transparent url(/thewayofthestone/images/logo_hole.gif) 0 0 no-repeat;
-        z-index: 10;
-        width: 400px;
-        height: 520px;
-      }
-
-      #logo_left {
-        position: absolute;
-        background: transparent url(/thewayofthestone/images/logo_left.gif) 0 0 no-repeat;
-        width: 400px;
-        height: 520px;
-      }
-
-      #logo_right {
-        position: absolute;
-        background: transparent url(/thewayofthestone/images/logo_right.gif) 0 0 no-repeat;
-        width: 400px;
-        height: 520px;
-      }
+    #background {
+      position: absolute;
+      background: #000 url(/thewayofthestone/images/background.jpg) fixed no-repeat top center;
+      background-size: cover;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
     }
 
-    nav {
-      padding-top: 25px;
+    #logo {
+      cursor: pointer;
     }
   }
 }
