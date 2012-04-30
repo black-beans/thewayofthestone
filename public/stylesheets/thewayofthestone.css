@@ -80,22 +80,25 @@ body.content {
   background: black url(/thewayofthestone/images/background.jpg) fixed no-repeat top center;
   background-size: cover;
 }
-/* line 57, ../../src/sass/thewayofthestone.scss */
+/* line 58, ../../src/sass/thewayofthestone.scss */
+body.content #thewayofthestone img {
+  margin-left: 240px;
+}
+/* line 63, ../../src/sass/thewayofthestone.scss */
 body.content header {
   background: rgba(170, 170, 170, 0.5);
-  padding-top: 5px;
-  height: 25px;
+  padding: 5px;
   margin: 0 auto;
 }
-/* line 64, ../../src/sass/thewayofthestone.scss */
+/* line 69, ../../src/sass/thewayofthestone.scss */
 body.content #logo {
   opacity: 0.1;
 }
-/* line 69, ../../src/sass/thewayofthestone.scss */
+/* line 74, ../../src/sass/thewayofthestone.scss */
 body.intro {
   background: #000;
 }
-/* line 72, ../../src/sass/thewayofthestone.scss */
+/* line 77, ../../src/sass/thewayofthestone.scss */
 body.intro #background {
   position: absolute;
   background: black url(/thewayofthestone/images/background.jpg) fixed no-repeat top center;
@@ -106,17 +109,17 @@ body.intro #background {
   bottom: 0;
   opacity: 0;
 }
-/* line 83, ../../src/sass/thewayofthestone.scss */
+/* line 88, ../../src/sass/thewayofthestone.scss */
 body.intro #logo {
   cursor: pointer;
 }
 
-/* line 90, ../../src/sass/thewayofthestone.scss */
+/* line 95, ../../src/sass/thewayofthestone.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "chaparral-pro";
 }
 
-/* line 94, ../../src/sass/thewayofthestone.scss */
+/* line 99, ../../src/sass/thewayofthestone.scss */
 #content {
   font-size: 16px;
   color: #fff;

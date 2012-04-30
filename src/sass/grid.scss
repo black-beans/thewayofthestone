@@ -13,18 +13,18 @@ $ninesixty-columns: 24;
 #container {
   @include grid-container;
 
-  header {
+  #thewayofthestone {
     @include grid(24);
   }
 
-  nav {
-    @include grid(8);
+  header {
+    @include grid(24);
   }
 
   #content {
     @include grid(24);
 
-   margin-top: 25px;
+    margin-top: 25px;
   }
 }
 

@@ -54,10 +54,15 @@ body {
     background: #000 url(/thewayofthestone/images/background.jpg) fixed no-repeat top center;
     background-size: cover;
 
+    #thewayofthestone {
+      img {
+        margin-left: 240px;
+      }
+    }
+
     header {
       background: rgba(170, 170, 170, 0.5);
-      padding-top: 5px;
-      height: 25px;
+      padding: 5px;
       margin: 0 auto;
     }
 

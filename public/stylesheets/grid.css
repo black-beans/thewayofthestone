@@ -74,7 +74,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 960px;
 }
 /* line 16, ../../src/sass/grid.scss */
-#container header {
+#container #thewayofthestone {
   display: inline;
   float: left;
   margin-left: 10px;
@@ -82,12 +82,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 940px;
 }
 /* line 20, ../../src/sass/grid.scss */
-#container nav {
+#container header {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 300px;
+  width: 940px;
 }
 /* line 24, ../../src/sass/grid.scss */
 #container #content {
