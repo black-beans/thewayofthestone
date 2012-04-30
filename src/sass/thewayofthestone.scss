@@ -40,12 +40,27 @@ body {
 
   &.content {
     background: #000 url(/thewayofthestone/images/background.jpg) fixed no-repeat top center;
+    background-size: cover;
 
     header {
       background: rgba(170, 170, 170, 0.5);
       padding-top: 5px;
       height: 25px;
       margin: 0 auto;
+    }
+
+    #logo {
+      position: absolute;
+      background: transparent url(/thewayofthestone/images/logo.gif);
+      background-repeat: repeat;
+      margin: auto;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+      width: 400px;
+      height: 520px;
+      opacity: 0.1;
     }
   }
 
@@ -93,4 +108,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "chaparral-pro";
+}
+
+#content {
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
 }

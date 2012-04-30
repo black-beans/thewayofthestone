@@ -1,3 +1,5 @@
+# Open door animation
+#
 $(->
   if $('body.intro').length is 1
     $('nav li a').click (event) ->
@@ -5,6 +7,7 @@ $(->
 
       $('nav').fadeOut()
 
+      #TODO: curtain opens in half the way
       $('#logo_left').animate({
         left: -150
         queue: false
@@ -25,4 +28,3 @@ $(->
 
       event.preventDefault()
 )
-
