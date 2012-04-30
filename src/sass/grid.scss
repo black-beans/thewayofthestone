@@ -22,7 +22,9 @@ $ninesixty-columns: 24;
   }
 
   #content {
-    @include grid(16);
+    @include grid(24);
+
+   margin-top: 25px;
   }
 }
 
