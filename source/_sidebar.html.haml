@@ -1,0 +1,36 @@
+.sidebar
+  %h3 Im Fokus
+  %p
+    = link_to '/haus-garten.html#lavabos', class: 'sublime zoom' do
+      %img{src: '/images/lavabo_teaser.jpg'}/
+  %p
+    = link_to '/brunnen.html', class: 'sublime zoom' do
+      %img{src: '/images/brunner_teaser.jpg'}/
+  %p
+    ➜ Lassen Sie sich von unseren
+    = link_to 'Brunnen', '/brunnen.html'
+    und
+    = link_to 'Lavabos', '/haus-garten.html#lavabos'
+    inspirieren.
+
+  %h3 Aktuelle Anlässe
+  %p ❂ Zur Zeit gibt es keine geplanten Anlässe.
+
+  %p
+    ➜ Impressionen aus vergangenen
+    = succeed '.' do
+      = link_to 'Anlässen', '/impressionen.html'
+
+  %h3 Atelier vermietung
+  %p
+    Haben Sie gewusst, dass Sie für Ihre Anlässe unser wunderbares
+    = link_to 'Atelier mieten', '/ueber-uns/ateliervermietung.html'
+    können?
+
+  %h3 Öffnungszeiten
+  %p
+    Montag‐Freitag
+    %br>/
+    7:00‐12:00 ❈ 13:30‐17:30
+
+  %p Nach Vereinbarung auch Abends oder am Wochenende.

@@ -1,0 +1,49 @@
+!!!
+%html
+  %head
+    %title The way of the stone
+    %meta{charset: 'utf-8'}/
+    %meta{content: 'deutsch, de', 'http-equiv' => 'language'}/
+    %meta{content: 'index,follow', name: 'robots'}/
+    %meta{content: '7 days', name: 'revisit-after'}/
+    %meta{content: 'Michael Kessler - www.flinkfinger.com', name: 'developer'}/
+    %meta{content: 'The Way of the Stone ist Rafael Häfliger und sein Team - Bildhauer + Plastiker', name: 'Description'}/
+    %meta{content: 'bildhauer, plastiker, atelier, kunst, grabsteine, steine, gartengestaltung, grabmale, kunst, interior design', name: 'Keywords'}/
+
+    = stylesheet_link_tag 'application'
+
+    /[if lt IE 9]
+      <script src='//html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+
+    %script{src: '//use.typekit.com/kdt2tlb.js', type: 'text/javascript'}
+
+    :javascript
+      //<![CDATA[
+        try{Typekit.load();}catch(e){}
+
+        var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-31522981-1']);
+          _gaq.push(['_trackPageview']);
+          
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+      //]]>
+
+  - case data.page.layout
+  - when 'intro'
+    - @base_class = 'intro'
+  - when 'content'
+    - @base_class = 'content'
+  - when 'gallery'
+    - @base_class = 'content gallery'
+
+  %body{ class: @base_class }
+
+    = yield
+
+    %script{src: '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', type: 'text/javascript'}
+    %script{src: '//cdn.sublimevideo.net/js/k581sym3.js', type: 'text/javascript'}
+    = javascript_include_tag 'application'

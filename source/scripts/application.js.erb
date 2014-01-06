@@ -1,0 +1,182 @@
+/*
+ *= require_tree ./plugins
+ *= require_self
+ */
+
+$(function () {
+
+    var subnav = $('nav > ul > li');
+
+    // Hide current visible subnavigation
+    //
+    subnav.mouseenter(function () {
+        $('nav > ul > li.parent_of_current').removeClass('parent_of_current').addClass('inactive_parent_of_current')
+    });
+
+    // Show current visible subnavigation
+    //
+    subnav.mouseleave(function () {
+        $('nav > ul > li.inactive_parent_of_current').removeClass('inactive_parent_of_current').addClass('parent_of_current')
+    });
+
+    //
+    // Intro animation
+    //
+    if ($('body.intro').length === 1) {
+        var zoom = 2;
+
+        var l = $('#logo');
+        var w = $(window);
+
+        // Animation complete action
+        var complete = function () {
+            var go = function () {
+                location.href = '<%= url_for('/home.html') %>';
+            };
+            setTimeout(go, 2000);
+        }
+
+        // Center the logo
+        var center = function () {
+            l.css({
+                top: (w.height() / 2) - (l.height() / 2),
+                left: (w.width() / 2) - (l.width() / 2)
+            });
+        }
+
+        // Prepare logo
+        l.css({
+            width: 400 * zoom,
+            height: 520 * zoom
+        });
+        center();
+
+        var moveBackground = function () {
+            // Background fade in
+            $('#container').animate({
+                opacity: 1
+            }, 800);
+
+            // Logo animation
+            l.animate({
+                opacity: 0.2,
+                width: 400,
+                height: 520,
+                top: (w.height() / 2) - (520 / 2),
+                left: (w.width() / 2) - (400 / 2)
+            }, {
+                duration: 800,
+                step: center,
+                complete: complete
+            });
+        }
+
+        setTimeout(moveBackground, 1000);
+    }
+
+    //
+    // Gallery
+    //
+    if ($('body.gallery').length === 1) {
+
+        var gallery = $('#gallery');
+
+        // Create isotope masonry
+        //
+        gallery.imagesLoaded(function () {
+
+            gallery.isotope({
+                itemSelector: '.item',
+                masonry: {
+                    columnWidth: 230,
+                    gutterWidth: 10
+                }
+            });
+
+            // Enable masonry filter
+            //
+            $('ul.filter a:first').each(function () {
+                var hashFilter = location.hash.substring(1);
+                var firstGallery = $(this).attr('href').substring(1);
+                var filter = hashFilter === '' ? firstGallery : hashFilter;
+                $('#gallery').isotope({ filter: '.' + filter });
+                $('a[name=' + filter + ']').parent().addClass('current');
+            });
+
+            $('.item', '#gallery').each(function () {
+                var item = $(this);
+
+                // Enable name caption slide
+                //
+                item.capslide({
+                    caption_color: 'white',
+                    caption_bgcolor: 'black',
+                    overlay_bgcolor: 'white',
+                    border: '',
+                    showcaption: false
+                });
+
+                // Show large image size on click
+                item.bind('click tap', function () {
+                    var image = $(this).find('img');
+
+                    $('.item.large', '#gallery').each(function () {
+                        var image = $(this).find('img');
+
+                        image.attr('src', image.data('small'));
+                        image.one('load',function () {
+
+                            var item = $(this).closest('.item');
+                            item.css('height', this.height);
+
+                            var c = item.find('.ic_caption');
+                            c.html(item.find('.name').text());
+
+                            item.removeClass('large');
+
+                            $('#gallery').isotope('reLayout');
+
+                        }).each(function () {
+                                if (this.complete) {
+                                    $(this).load();
+                                }
+                            });
+
+                    });
+
+                    image.attr('src', image.data('large'));
+
+                    image.one('load',function () {
+
+                        item.css('height', this.height);
+
+                        var c = item.find('.ic_caption');
+                        var desc = item.find('.description').text();
+                        if (desc !== '') {
+                            c.html(desc);
+                        }
+
+                        item.addClass('large');
+
+                        $('#gallery').isotope('reLayout');
+
+                    }).each(function () {
+                            if (this.complete) {
+                                $(this).load();
+                            }
+                        });
+                });
+
+                // Change masonry filter
+                //
+                $('ul.filter a').click(function () {
+                    $('ul.filter li').removeClass('current');
+                    $(this).parent().addClass('current');
+                    $('#gallery').isotope({ filter: '.' + $(this).attr('href').substring(1) });
+                });
+
+                $('#gallery').isotope('reLayout');
+            });
+        });
+    }
+});

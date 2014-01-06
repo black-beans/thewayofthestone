@@ -1,13 +1,8 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem 'compass'
-gem 'compass-960-plugin'
+gem 'middleman'
+gem 'middleman-livereload'
+gem 'middleman-s3_sync'
+gem 'middleman-sprockets'
 
-gem 'guard'
-gem 'guard-coffeescript'
-gem 'guard-compass'
-gem 'guard-haml'
-gem 'guard-livereload'
-
-gem 'ruby_gntp'
-gem 'rb-readline'
+gem 'builder'

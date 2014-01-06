@@ -1,0 +1,37 @@
+---
+layout: 'content'
+---
+
+.page.home
+  %h2 The Way of the Stone
+
+  %p
+    Willkommen bei The Way of the Stone, ihrem Bildhauer- und Plastiker-Team im Herzen von Wohlen. Wir sind ein erfahrenes
+    = link_to 'Team', '/ueber-uns/ueber-uns.html'
+    mit einer Leidenschaft rund um das Thema Stein und Kunst. Unser Leistungsspektrum umfasst die
+    Beratung, Planung, Entwicklung und Umsetzung von
+    = succeed ',' do
+      = link_to 'Kunst', '/kunst/kunst.html'
+    = succeed ',' do
+      = link_to 'Grabmalen', '/grabmale.html'
+    = succeed ',' do
+      = link_to 'Brunnen und Vogelbäder', '/brunnen.html'
+    = link_to 'Restaurierungen', '/restaurierungen/restaurierungen.html'
+    und
+    = succeed '.' do
+      %a{href: 'haus-garten/index.html'}
+      = link_to 'Garten- und Hausgestaltungen', '/haus-garten.html'
+
+  %h3 Video-Einblick
+  %p Wir laden Sie ein, sich mit dem folgenden Video einen schnellen Einblick in unsere Arbeit zu verschaffen:
+
+  %ul.video
+    %li
+      %a.sublime{href: '/videos/The-way-of-the-stone.mp4'}
+        %img{src: '/images/The_way_of_the_stone.png', width: '320'}/
+        %br/
+        The Way of the Stone
+      %video.sublime.lightbox{'data-name' => 'The Way of the Stone', height: '270', poster: '/images/The_way_of_the_stone.png', preload: 'none', style: 'display:none;', width: '480'}
+        %source{src: '/videos/The-way-of-the-stone.mp4'}
+
+  %p Rufen Sie uns an und lassen Sie sich bei einem persönlichen Gespräch kompetent beraten!

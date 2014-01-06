@@ -1,0 +1,35 @@
+%nav
+  %ul
+    %li.current.first
+      = link_to 'Home', '/home.html'
+    %li.has_children
+      = link_to 'Über uns', '/ueber-uns/ueber-uns.html'
+      %ul
+        %li.has_children
+          = link_to 'Über uns', '/ueber-uns/ueber-uns.html'
+        %li
+          = link_to 'Ateliervermietung', '/ueber-uns/ateliervermietung.html'
+        %li
+          = link_to 'Pressespiegel', '/ueber-uns/pressespiegel.html'
+    %li.has_children
+      = link_to 'Kunst', '/kunst/kunst.html'
+      %ul
+        %li
+          = link_to 'Kunst', '/kunst/kunst.html'
+        %li
+          = link_to 'Techniken', '/kunst/techniken.html'
+        %li
+          = link_to 'Geschenkideen', '/kunst/geschenkideen.html'
+    %li
+      = link_to 'Grabmale', '/grabmale.html'
+    %li
+      = link_to 'Brunnen', '/brunnen.html'
+    %li.has_children
+      = link_to 'Restaurierungen', '/restaurierungen/restaurierungen.html'
+      %ul
+        %li
+          = link_to 'Restaurierungen', '/restaurierungen/restaurierungen.html'
+        %li
+          = link_to 'Referenzliste', '/restaurierungen/referenzliste.html'
+    %li
+      = link_to 'Haus & Garten', '/haus-garten.html'

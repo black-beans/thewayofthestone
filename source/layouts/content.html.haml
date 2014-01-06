@@ -1,0 +1,17 @@
+= wrap_layout :layout do
+  #background
+  #container
+    #logo
+    %header
+      .logo
+        %img{src: '/images/thewayofthestone.png'}/
+      #dekoTL
+
+      = partial :navigation
+
+    #content
+      .page{ class: page_classes }
+        = yield
+      = partial :sidebar
+
+    = partial :footer
